@@ -38,6 +38,7 @@ jobs:
     - name: Purge Azure CDN
       uses: azure/CLI@v1
       with:
+ - run: npm run build --if-present
         azcliversion: 2.33.0
         inlineScript: |
           az cdn endpoint purge --content-paths  "/*" --profile-name "i-am-ai" --name "i-am-ai" --resource-group "Productive"
